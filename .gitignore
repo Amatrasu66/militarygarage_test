@@ -34,6 +34,7 @@ yarn-error.log*
 # Testing & Inspection artifacts
 .taste-skill/
 /coverage/
+*.tsbuildinfo
 
 # Antigravity Brain Task logs
 *.log

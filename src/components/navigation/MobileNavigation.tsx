@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import { MAIN_NAV } from "@/config/navigation";
 import { MCSLogo } from "@/components/ui/MCSLogo";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { X, ArrowRight, PhoneCall } from "lucide-react";
 import { CONTACT_STATUS } from "@/lib/constants";
 

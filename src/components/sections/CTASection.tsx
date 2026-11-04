@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { ArrowRight, Wrench, Car, PhoneCall } from "lucide-react";
 import { BRAND, CONTACT_STATUS } from "@/lib/constants";
 import { cn } from "@/lib/utils";

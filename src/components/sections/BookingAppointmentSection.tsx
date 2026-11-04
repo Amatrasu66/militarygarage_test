@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FormField } from "@/components/forms/FormField";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2, Clock, MapPin, AlertCircle } from "lucide-react";
 import { CONTACT_STATUS } from "@/lib/constants";
 

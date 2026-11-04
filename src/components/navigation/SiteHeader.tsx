@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { MAIN_NAV } from "@/config/navigation";
 import { MCSLogo } from "@/components/ui/MCSLogo";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { MobileNavigation } from "@/components/navigation/MobileNavigation";
 import { Phone, Menu, ArrowRight } from "lucide-react";
 import { CONTACT_STATUS } from "@/lib/constants";

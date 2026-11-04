@@ -2,10 +2,12 @@ import type { Metadata, Viewport } from "next";
 import { Barlow_Condensed, Inter, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["600", "700", "800", "900"],
   variable: "--font-barlow-condensed",
   display: "swap",
 });
@@ -50,10 +52,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${barlowCondensed.variable} ${inter.variable} ${ibmPlexMono.variable} antialiased`}
+      className={cn(
+        "antialiased",
+        barlowCondensed.variable,
+        inter.variable,
+        ibmPlexMono.variable
+      )}
     >
-      <body className="min-h-screen flex flex-col bg-[#111418] text-[#F5F4EF] selection:bg-[#D83A3A] selection:text-white">
-        {children}
+      <body className="min-h-screen flex flex-col bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
+        <TooltipProvider delayDuration={200}>{children}</TooltipProvider>
       </body>
     </html>
   );

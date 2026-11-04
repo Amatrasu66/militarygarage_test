@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SiteHeader } from "@/components/navigation/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { Home } from "lucide-react";
 
 export default function NotFound() {
@@ -17,8 +17,8 @@ export default function NotFound() {
             Off Track
           </h1>
           <p className="text-sm text-[#AAB2B8] leading-relaxed">
-            The page or vehicle record you are looking for does not exist or has been
-            relocated.
+            The page or automotive service you are looking for does not exist or has
+            been relocated.
           </p>
           <div className="pt-2 flex justify-center">
             <Button asChild variant="primary" size="md" leftIcon={<Home className="w-4 h-4" />}>

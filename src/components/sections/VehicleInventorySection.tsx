@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { VehicleCard } from "@/components/vehicles/VehicleCard";
 import { SAMPLE_VEHICLES } from "@/data/vehicles";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { Search, AlertCircle } from "lucide-react";
 
 export function VehicleInventorySection() {

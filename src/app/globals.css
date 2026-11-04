@@ -1,48 +1,171 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* 
+ * Military Car Service (MCS) — Canonical Design Tokens & Semantic Variables
+ * Phase 1 Design System Foundation
+ * Dark foundation baseline adhering to:
+ * - 60% MCS Performance (Obsidian #111418, Graphite #202830, Red #E23B3B)
+ * - 25% Precision Automotive (Iron #343C43, Steel #AAB2B8, Inter/IBM Plex Mono)
+ * - 15% American Heritage (Warm Ivory #F5F4EF, Light Surface #F2F0EA)
+ */
 
 :root {
+  /* MCS Brand Color Tokens */
   --mcs-obsidian: #111418;
   --mcs-graphite: #202830;
-  --mcs-red: #D83A3A;
-  --mcs-red-hover: #BA2E2E;
+  --mcs-red: #E23B3B;
+  --mcs-red-hover: #C52B2B;
   --mcs-ivory: #F5F4EF;
   --mcs-steel: #AAB2B8;
   --mcs-iron: #343C43;
+  --mcs-light-surface: #F2F0EA;
 
+  /* Functional Status Tokens */
   --mcs-success: #27865C;
   --mcs-warning: #D69B32;
-  --mcs-error: #D83A3A;
+  --mcs-error: #E23B3B;
   --mcs-info: #347DA5;
+
+  /* shadcn/ui Semantic Variables — Dark-First Automotive Foundation */
+  --background: #111418;
+  --foreground: #F5F4EF;
+  --card: #202830;
+  --card-foreground: #F5F4EF;
+  --popover: #202830;
+  --popover-foreground: #F5F4EF;
+  --primary: #E23B3B;
+  --primary-foreground: #FFFFFF;
+  --secondary: #202830;
+  --secondary-foreground: #F5F4EF;
+  --muted: #202830;
+  --muted-foreground: #AAB2B8;
+  --accent: #202830;
+  --accent-foreground: #F5F4EF;
+  --destructive: #E23B3B;
+  --destructive-foreground: #FFFFFF;
+  --border: #343C43;
+  --input: #343C43;
+  --ring: #E23B3B;
+  --radius: 0.5rem;
+
+  /* Charts & Secondary Accents */
+  --chart-1: #E23B3B;
+  --chart-2: #347DA5;
+  --chart-3: #27865C;
+  --chart-4: #D69B32;
+  --chart-5: #AAB2B8;
+
+  /* Sidebar Tokens (Matches Dark Shell) */
+  --sidebar: #111418;
+  --sidebar-foreground: #F5F4EF;
+  --sidebar-primary: #E23B3B;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #202830;
+  --sidebar-accent-foreground: #F5F4EF;
+  --sidebar-border: #343C43;
+  --sidebar-ring: #E23B3B;
+}
+
+/* Light Surface Utility Scope (for contrasting light sections like We Buy Cars) */
+.surface-light,
+[data-surface="light"] {
+  --background: #F2F0EA;
+  --foreground: #111418;
+  --card: #FFFFFF;
+  --card-foreground: #111418;
+  --popover: #FFFFFF;
+  --popover-foreground: #111418;
+  --primary: #E23B3B;
+  --primary-foreground: #FFFFFF;
+  --secondary: #E5E3DC;
+  --secondary-foreground: #111418;
+  --muted: #E5E3DC;
+  --muted-foreground: #5C6770;
+  --accent: #E5E3DC;
+  --accent-foreground: #111418;
+  --border: #D0D4D8;
+  --input: #D0D4D8;
+  --ring: #E23B3B;
 }
 
 @theme {
-  --color-mcs-obsidian: #111418;
-  --color-mcs-graphite: #202830;
-  --color-mcs-red: #D83A3A;
-  --color-mcs-red-hover: #BA2E2E;
-  --color-mcs-ivory: #F5F4EF;
-  --color-mcs-steel: #AAB2B8;
-  --color-mcs-iron: #343C43;
+  --color-mcs-obsidian: var(--mcs-obsidian);
+  --color-mcs-graphite: var(--mcs-graphite);
+  --color-mcs-red: var(--mcs-red);
+  --color-mcs-red-hover: var(--mcs-red-hover);
+  --color-mcs-ivory: var(--mcs-ivory);
+  --color-mcs-steel: var(--mcs-steel);
+  --color-mcs-iron: var(--mcs-iron);
+  --color-mcs-light-surface: var(--mcs-light-surface);
 
-  --color-mcs-success: #27865C;
-  --color-mcs-warning: #D69B32;
-  --color-mcs-error: #D83A3A;
-  --color-mcs-info: #347DA5;
+  --color-mcs-success: var(--mcs-success);
+  --color-mcs-warning: var(--mcs-warning);
+  --color-mcs-error: var(--mcs-error);
+  --color-mcs-info: var(--mcs-info);
 
   --font-display: var(--font-barlow-condensed), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: var(--font-ibm-plex-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
-/* Base body reset adhering to brand dark foundation */
+@theme inline {
+  --font-heading: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+}
+
+/* Base HTML body reset adhering to brand dark foundation */
 html {
   scroll-behavior: smooth;
   color-scheme: dark;
 }
 
 body {
-  background-color: var(--mcs-obsidian);
-  color: var(--mcs-ivory);
+  background-color: var(--background);
+  color: var(--foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
