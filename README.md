@@ -159,3 +159,4 @@ Garage_freelance/
   - Live appointment availability checking and persistence.
   - Production payment processing and email/SMS triggers.
   - External live inventory management system.
+# militarygarage_test
