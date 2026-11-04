@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --mcs-obsidian: #111418;
+  --mcs-graphite: #202830;
+  --mcs-red: #D83A3A;
+  --mcs-red-hover: #BA2E2E;
+  --mcs-ivory: #F5F4EF;
+  --mcs-steel: #AAB2B8;
+  --mcs-iron: #343C43;
+
+  --mcs-success: #27865C;
+  --mcs-warning: #D69B32;
+  --mcs-error: #D83A3A;
+  --mcs-info: #347DA5;
+}
+
+@theme {
+  --color-mcs-obsidian: #111418;
+  --color-mcs-graphite: #202830;
+  --color-mcs-red: #D83A3A;
+  --color-mcs-red-hover: #BA2E2E;
+  --color-mcs-ivory: #F5F4EF;
+  --color-mcs-steel: #AAB2B8;
+  --color-mcs-iron: #343C43;
+
+  --color-mcs-success: #27865C;
+  --color-mcs-warning: #D69B32;
+  --color-mcs-error: #D83A3A;
+  --color-mcs-info: #347DA5;
+
+  --font-display: var(--font-barlow-condensed), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-sans: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Base body reset adhering to brand dark foundation */
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--mcs-obsidian);
+  color: var(--mcs-ivory);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Accessible focus ring utility */
+.focus-mcs {
+  outline: none;
+}
+.focus-mcs:focus-visible {
+  outline: 2px solid var(--mcs-red);
+  outline-offset: 2px;
+}
+
+/* Reduced motion accessibility rule */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
